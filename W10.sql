@@ -1,3 +1,4 @@
+-- Tester Comment
 -- Question 1
 SELECT
     genre_name AS "Genre",
