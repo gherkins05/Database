@@ -20,6 +20,8 @@ CREATE TRIGGER check_task_date_before_insert
 BEFORE INSERT OR UPDATE ON tasks
 FOR EACH ROW EXECUTE FUNCTION check_task_dates();
 
+-- _______________________________________________________
+
 CREATE TABLE staff (
     staff_id SERIAL PRIMARY KEY,
     staff_name VARCHAR(30) NOT NULL,
@@ -79,7 +81,7 @@ CREATE TABLE tasks (
 );
 
 INSERT INTO tasks
-    (proj_id, staff_id, task_cost, task_status, tast_deadline, task_description)
+    (staff_id, proj_id, task_cost, task_status, tast_deadline, task_description)
 VALUES
     (3, 4, '£734.11', 'completed', '2023/11/14', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.'),
     (1, 4, '£261.79', 'completed', '2022/11/16', 'Aenean lectus.'),
@@ -90,14 +92,14 @@ VALUES
     (3, 1, '£343.38', 'completed', '2023/09/13', 'Etiam justo.'),
     (1, 3, '£404.53', 'pending', '2023/05/23', 'Duis ac nibh.'),
     (3, 1, '£15.27', 'in-progress', '2022/03/03', 'In quis justo.'),
-    (3, 3, '£93.09', 'completed', '2023/08/29', 'Ut tellus. Nulla ut erat id mauris vulputate elementum.'),
+    (2, 3, '£93.09', 'completed', '2023/08/29', 'Ut tellus. Nulla ut erat id mauris vulputate elementum.'),
     (2, 3, '£337.38', 'completed', '2022/09/09', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.'),
     (1, 3, '£838.59', 'pending', '2023/12/07', 'Quisque ut erat.'),
     (3, 1, '£107.48', 'pending', '2023/04/28', 'Etiam vel augue.'),
-    (4, 5, '£799.99', 'pending', '2022/08/27', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.'),
+    (3, 4, '£799.99', 'pending', '2022/08/27', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.'),
     (1, 4, '£789.18', 'in-progress', '2023/06/29', 'Vestibulum sed magna at nunc commodo placerat.'),
     (1, 1, '£550.14', 'pending', '2022/09/08', 'Proin eu mi. Nulla ac enim.'),
-    (4, 3, '£815.49', 'pending', '2022/08/18', 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.'),
+    (3, 3, '£815.49', 'pending', '2022/08/18', 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.'),
     (2, 1, '£933.21', 'pending', '2023/05/14', 'Curabitur at ipsum ac tellus semper interdum.'),
     (1, 4, '£674.69', 'in-progress', '2022/09/24', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.'),
-    (4, 1, '£671.54', 'completed', '2023/12/28', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.');
+    (1, 1, '£671.54', 'completed', '2023/12/28', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.');
