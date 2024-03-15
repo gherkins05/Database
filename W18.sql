@@ -59,7 +59,7 @@ CREATE TABLE projects (
     proj_name VARCHAR(30) UNIQUE NOT NULL,
     proj_start_date DATE NOT NULL,
     proj_end_date DATE CHECK (proj_start_date <= proj_end_date),
-    proj_budget DOUBLE PRECISION
+    proj_budget DOUBLE PRECISION NOT NULL
 );
 
 INSERT INTO projects
@@ -74,10 +74,10 @@ CREATE TABLE tasks (
     task_id SERIAL PRIMARY KEY,
     proj_id SMALLINT NOT NULL REFERENCES projects(proj_id),
     staff_id SMALLINT NOT NULL REFERENCES staff(staff_id),
-    task_cost DOUBLE PRECISION,
+    task_cost DOUBLE PRECISION NOT NULL,
     task_status VARCHAR(11) NOT NULL CHECK (tast_status IN ('in-progress', 'pending', 'completed')),
     task_deadline DATE NOT NULL,
-    task_description VARCHAR(2000)
+    task_description VARCHAR(200) NOT NULL
 );
 
 INSERT INTO tasks
@@ -103,3 +103,5 @@ VALUES
     (2, 1, '£933.21', 'pending', '2023/05/14', 'Curabitur at ipsum ac tellus semper interdum.'),
     (1, 4, '£674.69', 'in-progress', '2022/09/24', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.'),
     (1, 1, '£671.54', 'completed', '2023/12/28', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.');
+
+
