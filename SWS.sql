@@ -21,7 +21,7 @@
 
 
 -- A view giving all information on the students
--- CAUTION: USES UNKNOWN INFORMATION
+-- CAUTION: USES UNKNOWN INFORMATION AND INCOMPLETE
 CREATE
 OR REPLACE VIEW stu_info AS
 SELECT
@@ -37,7 +37,8 @@ ORDER BY
     s.sudent_name;
 
 -- A view getting the performance of each student per module across the years
--- Order by student then by performance
-
+-- Order by module then by student then by performance
+-- Can be achieved by using the linking student information to the subbmission_id in modules_result
+--
 -- A view that compiles all of the teacher, student interactions and which course/module/room etc
 -- Call it interactions/ ..?
