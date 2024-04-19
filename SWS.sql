@@ -16,6 +16,7 @@
 -- Can be developed further for a multitude of reasons: cheating, staff effectiveness, compare to students in their classes
 --
 --
+-- A query that links performance based on students location may be difficult cause everyone lives so close to each other
 
 
 
