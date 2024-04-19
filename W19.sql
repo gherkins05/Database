@@ -88,6 +88,7 @@ ORDER BY
     "Student";
 
 -- Question 8
+-- STRING_AGG groups items together to put in a single cell
 SELECT
     b.book_title AS "Book",
     STRING_AGG (

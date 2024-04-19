@@ -1,4 +1,6 @@
 -- Question 1
+-- CASE is basically an if else statement in SQL. 
+-- It is used to check a condition and return a value based on that condition.
 SELECT
     CASE
         WHEN s.stu_id IS NOT NULL THEN s.stu_id
